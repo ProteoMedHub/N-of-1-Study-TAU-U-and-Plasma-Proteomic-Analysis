@@ -65,7 +65,7 @@ data %>% filter(!is.na(`Treatment Period`)) %>%
 #| echo: true
 #| code-fold: true
 #| code-summary: "expand for full code"
-#Adjusting the parameters
+# Adjusting the parameters
 data %>% arrange(`Treatment Period`)
 n_a <- as.numeric(count(data[data$`Treatment Period` =="A",])) 
 n_b <- as.numeric(count(data[data$`Treatment Period` =="B",]))

@@ -10,7 +10,8 @@ editor: visual
 #| code-summary: "expand for full code"
 # IMPORT ------------------------------------------------------------------
 library(readxl)
-data <- read_excel("data.xlsx") #Replace the file name “data.xlsx” with the name of your Excel file.
+data <- read_excel("data.xlsx") # Replace "data.xlsx" with the correct file name or use the full path  
+# Example: read_excel("C:/Users/YourUser/Documents/data.xlsx") 
 
 pacman::p_load(tidyverse,scan,kableExtra,SingleCaseES)
 ```

@@ -67,12 +67,12 @@ data %>% filter(!is.na(`Treatment Period`)) %>%
 #| code-summary: "expand for full code"
 #Adjusting the parameters
 data %>% arrange(`Treatment Period`)
-n_a <- as.numeric(count(banco[data$treatment period =="A",])) 
-n_b <- as.numeric(count(banco[data$treatment period =="B",]))
-BD.Ordenado <- banco %>% arrange(treatment period)
-vPCS <- as.vector(BD.Ordenado$PCS)
-vBDI <- as.vector(BD.Ordenado$BDI)
-vMCS <- as.vector(BD.Ordenado$MCS)
+n_a <- as.numeric(count(data[data$`Treatment Period` =="A",])) 
+n_b <- as.numeric(count(data[data$`Treatment Period` =="B",]))
+OrderedData <- data %>% arrange(`Treatment Period`)
+vPCS <- as.vector(OrderedData$PCS)
+vBDI <- as.vector(OrderedData$BDI)
+vMCS <- as.vector(OrderedData$MCS)
 
 
 tPCS <- scdf(vPCS, phase_design = c(A = n_a, B = n_b), name = "PCS")

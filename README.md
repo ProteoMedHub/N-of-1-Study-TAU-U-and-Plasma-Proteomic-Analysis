@@ -22,20 +22,20 @@ pacman::p_load(tidyverse,scan,kableExtra,SingleCaseES)
 #| code-fold: true
 #| code-summary: "expand for full code"
 
-treatment period %>% filter(!is.na(treatment period)) %>% 
-  group_by(treatment period) %>% 
+data %>% filter(!is.na(`Treatment Period`)) %>% 
+  group_by(`Treatment Period`) %>% 
   mutate(n=row_number()) %>% 
   ungroup() %>% 
   ggplot( aes(n, PCS)) + 
   geom_line(size=0.5) +
   geom_point()+
-  geom_smooth(method = "lm",se = F,linetype = "dashed", color="gray")+
+  geom_smooth(method = "lm",se = F,linetype = "dashed", color="grey")+
   xlab("\nSampling") + ylab("PCS\n") +
   theme_classic() + 
-  theme(axis.text=element_text(size=10),axis.title=element_text(size=10)) + facet_grid(~treatment period)
+  theme(axis.text=element_text(size=10),axis.title=element_text(size=10)) + facet_grid(~`Treatment Period`)
 
-data %>% filter(!is.na(treatment period)) %>% 
-  group_by(treatment period) %>% 
+data %>% filter(!is.na(`Treatment Period`)) %>% 
+  group_by(`Treatment Period`) %>% 
   mutate(n=row_number()) %>% 
   ungroup() %>% 
   ggplot( aes(n, MCS)) + 
@@ -44,11 +44,10 @@ data %>% filter(!is.na(treatment period)) %>%
   geom_smooth(method = "lm",se = F,linetype = "dashed", color="gray")+
   xlab("\nSampling") + ylab("MCS\n") +
   theme_classic() + 
-  theme(axis.text=element_text(size=10),axis.title=element_text(size=10)) + facet_grid(~treatment period)
+  theme(axis.text=element_text(size=10),axis.title=element_text(size=10)) + facet_grid(~`Treatment Period`)
 
-
-data %>% filter(!is.na(treatment period)) %>% 
-  group_by(treatment period) %>% 
+data %>% filter(!is.na(`Treatment Period`)) %>% 
+  group_by(`Treatment Period`) %>% 
   mutate(n=row_number()) %>% 
   ungroup() %>% 
   ggplot( aes(n, BDI)) + 
@@ -57,7 +56,7 @@ data %>% filter(!is.na(treatment period)) %>%
   geom_smooth(method = "lm",se = F,linetype = "dashed", color="gray")+
   xlab("\nSampling") + ylab("BDI\n") +
   theme_classic() + 
-  theme(axis.text=element_text(size=10),axis.title=element_text(size=10)) + facet_grid(~treatment period)
+  theme(axis.text=element_text(size=10),axis.title=element_text(size=10)) + facet_grid(~`Treatment Period`)
 ```
 
 ## TAU-U
@@ -67,7 +66,7 @@ data %>% filter(!is.na(treatment period)) %>%
 #| code-fold: true
 #| code-summary: "expand for full code"
 #Adjusting the parameters
-data %>% arrange(treatment period)
+data %>% arrange(`Treatment Period`)
 n_a <- as.numeric(count(banco[data$treatment period =="A",])) 
 n_b <- as.numeric(count(banco[data$treatment period =="B",]))
 BD.Ordenado <- banco %>% arrange(treatment period)

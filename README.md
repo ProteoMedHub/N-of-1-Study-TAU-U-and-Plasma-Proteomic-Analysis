@@ -1,7 +1,7 @@
 # N-of-1 HOMDD Studies TAU-U Analysis
 
 ## Overview
-This repository contains comprehensive analysis code for studying protein expression patterns and treatment effects in patients undergoing TAU-U (Treatment as Usual - U) treatment. The project includes both proteomics data analysis and statistical evaluation of treatment outcomes.
+This repository contains comprehensive analysis code for analyzing the N-of-1 study data, i.e., the TAU-U statistical test for evaluating the treatment effects on the primary and secondary clinical outcome measures and the Protein Expression Analysis for studying the corresponding plasma protein expression patterns. The project includes both statistical evaluation of treatment outcomes and proteomics data analysis.
 
 ## Project Structure
 ```
@@ -44,6 +44,9 @@ The protein expression data is stored in CSV files with the following columns:
 - Compares treatment vs placebo conditions
 
 ## TAU-U Treatment Effect Analysis
+
+### About TAU-U
+To analyze the primary and secondary outcome measures of the N-of-1 trial, we used the Tau-U statistical test (Parker et al. 2011), a popular single-case non‐parametric effect size estimator that is not significantly influenced by the degree of autocorrelation. Tau-U is a non-parametric, distribution-free method suitable for small datasets. It assesses the nonoverlap between the treatment phases, controlling for the time series trend within the intervention phase (Barnard-Brak et al., 2021). Here, we provide the R statistical programming language for the TAU-U calculation.
 
 ### Data Requirements
 - Excel file containing treatment period data
@@ -124,6 +127,10 @@ install.packages(c(
 - Tau-U values indicate treatment effect size
 - Confidence intervals provide statistical significance
 - Visualizations show trends in PCS, MCS, and BDI scores
+
+### References
+- Parker RI, Vannest KJ, Davis JL, Sauber SB. Combining Nonoverlap and Trend for Single-Case Research: Tau-U. Behav Ther [Internet]. 2011 Jun;42(2):284–99. Available from: https://linkinghub.elsevier.com/retrieve/pii/S0005789411000153
+- Barnard-Brak L, Watkins L, Richman DM. Autocorrelation and estimates of treatment effect size for single-case experimental design data. Behavioral Interventions. 2021 Jul 1;36(3):595–605.
 
 ## Contact
 For questions about the analysis or data, please contact the project maintainer.

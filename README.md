@@ -6,11 +6,8 @@ This repository contains comprehensive analysis code for studying protein expres
 ## Project Structure
 ```
 N-of-1-HOMDD-1-Studies-TAU-U-Analysis/
-├── 0_PatA_stats.R        # Patient A statistical analysis
 ├── 0_PatK_stats.R        # Patient K statistical analysis
-├── 1_PatA_protexpr.R     # Patient A protein expression analysis
 ├── 1_PatK_protexpr.R     # Patient K protein expression analysis
-├── All_identified_proteins_PatA_filtered_norm.csv  # Patient A data
 ├── All_identified_proteins_PatK_filtered_norm.csv  # Patient K data
 ├── data.xlsx             # TAU-U treatment data
 └── README.md            # This documentation
@@ -36,12 +33,12 @@ The protein expression data is stored in CSV files with the following columns:
 
 ### Analysis Scripts
 
-#### 1. Statistical Analysis (0_*.R)
+#### 1. Statistical Analysis (0_PatK_stats.R)
 - Performs initial statistical analysis of protein expression data
 - Conducts ANOVA and multiple testing corrections
 - Identifies significant changes in protein expression
 
-#### 2. Protein Expression Analysis (1_*.R)
+#### 2. Protein Expression Analysis (1_PatK_protexpr.R)
 - Analyzes protein expression patterns over time
 - Creates visualizations including heatmaps
 - Compares treatment vs placebo conditions
@@ -85,7 +82,7 @@ install.packages(c(
 ### Project Setup
 1. Install all required R packages using the command above
 2. Place the data files in their respective locations:
-   - Protein expression data: `All_identified_proteins_PatA_filtered_norm.csv` and `All_identified_proteins_PatK_filtered_norm.csv`
+   - Protein expression data: `All_identified_proteins_PatK_filtered_norm.csv`
    - TAU-U data: `data.xlsx`
 
 ## Usage
@@ -96,11 +93,9 @@ install.packages(c(
 3. Run the analysis scripts in sequence:
    ```R
    # First run the statistics scripts
-   source("0_PatA_stats.R")
    source("0_PatK_stats.R")
    
    # Then run the protein expression analysis
-   source("1_PatA_protexpr.R")
    source("1_PatK_protexpr.R")
    ```
 
